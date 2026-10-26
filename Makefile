@@ -4,9 +4,13 @@ BIBTEX=bibtex
 BUILD_DIR=build
 PDF_DIR=PDF
 
-$(PDF_DIR)/$(NAME).pdf: $(NAME).tex
+
+$(BUILD_DIR)/$(NAME).pdf: $(NAME).tex
 	mkdir -p $(BUILD_DIR) $(PDF_DIR)
 	latexmk -xelatex -outdir=$(BUILD_DIR) $(NAME).tex
+
+$(PDF_DIR)/$(NAME).pdf: $(BUILD_DIR)/$(NAME).pdf
+	mkdir -p $(PDF_DIR)
 	cp $(BUILD_DIR)/$(NAME).pdf $(PDF_DIR)/$(NAME).pdf
 
 clean:
