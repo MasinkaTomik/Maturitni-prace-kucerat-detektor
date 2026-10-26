@@ -1,0 +1,12 @@
+{
+  "name": "LaTeX",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postCreateCommand": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y texlive-xetex texlive-lang-czechslovak texlive-science texlive-fonts-extra texlive-latex-extra latexmk biber",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "james-yu.latex-workshop"
+      ]
+    }
+  }
+}
